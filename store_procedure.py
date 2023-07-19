@@ -61,8 +61,21 @@ def modificar(dni, edad):
         cursor.close()
     except ImportError as ex:
         print(ex)
+def eliminar(dni):
+    """Eliminar información"""
+    try:
+        connection= conexion()
+        cursor = connection.cursor()
+        store_proc = "exec spEliminar @intDni = ?"
+        params = dni
+        cursor.execute(store_proc, params)
+        cursor.commit()
+        cursor.close()
+    except ImportError as ex:
+        print(ex)
 listado()
 listado__apellido_dni("Cruz Leon",1)
-#guardar(111111,"Vlas","Vlas","Vlas",18)
-modificar(111111,20)
+# guardar(111111,"Vlas","Vlas","Vlas",18)
+# modificar(111111,20)
+eliminar(111111)
 listado()
