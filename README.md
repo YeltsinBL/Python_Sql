@@ -3,3 +3,5 @@
 Conexión de  Python con Sql Server
 
 - Conexión: se agregó las credenciales.
+- Consulta Directa: se realiza las consultas directamente en el código.
+  - Listado simple, sin parámetros.
