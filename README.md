@@ -8,3 +8,4 @@ Conexión de  Python con Sql Server, realizando un crud con las consultas direct
   - Listado con parámetro.
   - Guardar con parámetros.
   - Modificar con parámetros.
+  - Eliminar con parámetro.

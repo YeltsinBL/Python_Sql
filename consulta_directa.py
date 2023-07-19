@@ -56,8 +56,20 @@ def modificar_parametro(dni, edad):
         cursor.close()
     except ImportError as ex:
         print(ex)
+def eliminar_parametro(dni):
+    """Listado con parámetro"""
+    try:
+        connection= conexion()
+        cursor = connection.cursor()
+        sql = "delete from cliente where dni=?"
+        cursor.execute(sql, dni)
+        cursor.commit()
+        cursor.close()
+    except ImportError as ex:
+        print(ex)
 listado_simple()
 listado_parametro(78984568)
 #guardar_parametro(111111,"Vlas","Vlas","Vlas",18)
-modificar_parametro(111111,20)
+#modificar_parametro(111111,20)
+eliminar_parametro(111111)
 listado_simple()
