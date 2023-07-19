@@ -19,9 +19,21 @@ def listado_simple():
         for cliente in clientes:
             print("1LS:",cliente)
         cursor.close()
-    except Exception as ex:
+    except ImportError as ex:
+        print(ex)
+def listado_parametro(dni):
+    """Listado con parámetro"""
+    try:
+        connection= conexion()
+        cursor = connection.cursor()
+        # Consulta directa
+        cursor.execute(f"select * from cliente where dni = {dni}")
+        cliente =cursor.fetchone()
+        print("2LP:",cliente)
+        cursor.close()
+    except ImportError as ex:
         print(ex)
 
 
-
 listado_simple()
+listado_parametro(78984568)
