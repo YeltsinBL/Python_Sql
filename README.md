@@ -9,3 +9,6 @@ Conexión de  Python con Sql Server, realizando un crud con las consultas direct
   - Guardar con parámetros.
   - Modificar con parámetros.
   - Eliminar con parámetro.
+- Store Procedure: utilización de los procedimientos almacenados.
+  - Listado Simple.
+  - Listado con parámetro, dos formas de realizarlo.
