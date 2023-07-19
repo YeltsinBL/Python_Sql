@@ -34,7 +34,7 @@ def listado_parametro(dni):
     except ImportError as ex:
         print(ex)
 def guardar_parametro(dni,ape_pat,ape_mat,nombre,edad):
-    """Listado con parámetro"""
+    """Guardar información"""
     try:
         connection= conexion()
         cursor = connection.cursor()
@@ -46,7 +46,7 @@ def guardar_parametro(dni,ape_pat,ape_mat,nombre,edad):
     except ImportError as ex:
         print(ex)
 def modificar_parametro(dni, edad):
-    """Listado con parámetro"""
+    """Modificar información"""
     try:
         connection= conexion()
         cursor = connection.cursor()
@@ -57,7 +57,7 @@ def modificar_parametro(dni, edad):
     except ImportError as ex:
         print(ex)
 def eliminar_parametro(dni):
-    """Listado con parámetro"""
+    """Eliminar información"""
     try:
         connection= conexion()
         cursor = connection.cursor()

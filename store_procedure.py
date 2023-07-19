@@ -36,5 +36,20 @@ def listado__apellido_dni(valor, indicador=0):
 
     except ImportError as ex:
         print(ex)
+def guardar(dni,ape_pat,ape_mat,nombre,edad):
+    """Guardar información"""
+    try:
+        connection= conexion()
+        cursor = connection.cursor()
+        store_proc = "exec spGuardarCliente @intDni = ?, @strApePat = ?, @strApeMat = ?,\
+                     @strNombre = ?, @intEdad = ?"
+        params = (dni,ape_pat,ape_mat,nombre,edad)
+        cursor.execute(store_proc, params)
+        cursor.commit()
+        cursor.close()
+    except ImportError as ex:
+        print(ex)
 listado()
 listado__apellido_dni("Cruz Leon",1)
+guardar(111111,"Vlas","Vlas","Vlas",18)
+listado()
