@@ -45,8 +45,19 @@ def guardar_parametro(dni,ape_pat,ape_mat,nombre,edad):
         cursor.close()
     except ImportError as ex:
         print(ex)
-
+def modificar_parametro(dni, edad):
+    """Listado con parámetro"""
+    try:
+        connection= conexion()
+        cursor = connection.cursor()
+        sql = "update cliente set edad= ? where dni=?"
+        cursor.execute(sql, edad, dni)
+        cursor.commit()
+        cursor.close()
+    except ImportError as ex:
+        print(ex)
 listado_simple()
 listado_parametro(78984568)
-guardar_parametro(111111,"Vlas","Vlas","Vlas",18)
+#guardar_parametro(111111,"Vlas","Vlas","Vlas",18)
+modificar_parametro(111111,20)
 listado_simple()
